@@ -1,0 +1,65 @@
+services:
+
+  db:
+    image: mariadb:11.8
+    container_name: mediawiki-db
+    restart: unless-stopped
+    env_file:
+      - .env
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redis:7.4
+    container_name: mediawiki-redis
+    restart: unless-stopped
+    volumes:
+      - redis_data:/data
+
+  mediawiki:
+    image: mediawiki:1.43
+    container_name: mediawiki
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+
+    ports:
+      - "8080:80"
+
+    volumes:
+      - ./data/images:/var/www/html/images
+      - ./data/extensions:/var/www/html/extensions
+
+    environment:
+      MEDIAWIKI_DB_HOST: db
+
+  caddy:
+    image: caddy:2.10
+    container_name: mediawiki-caddy
+    restart: unless-stopped
+    depends_on:
+      - mediawiki
+
+    ports:
+      - "80:80"
+      - "443:443"
+
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+
+volumes:
+  db_data:
+  redis_data:
+  caddy_data:
+  caddy_config:
