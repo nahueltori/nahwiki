@@ -1,4 +1,4 @@
-{$DOMAIN:localhost} {
+:80 {
 
     reverse_proxy mediawiki:80
 
