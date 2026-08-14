@@ -1,13 +1,13 @@
-{$DOMAIN} {
+{$DOMAIN:localhost} {
 
-reverse_proxy mediawiki:80
+    reverse_proxy mediawiki:80
 
-encode gzip
+    encode gzip
 
-header {
-    X-Content-Type-Options nosniff
-    X-Frame-Options SAMEORIGIN
-    Referrer-Policy strict-origin-when-cross-origin
-}
+    header {
+        X-Content-Type-Options nosniff
+        X-Frame-Options SAMEORIGIN
+        Referrer-Policy strict-origin-when-cross-origin
+    }
 
 }

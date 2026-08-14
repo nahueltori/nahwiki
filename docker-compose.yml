@@ -48,11 +48,11 @@ services:
     restart: unless-stopped
     depends_on:
       - mediawiki
-
     ports:
       - "80:80"
       - "443:443"
-
+    environment:
+      - DOMAIN=wiki.net.ar
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile:ro
       - caddy_data:/data
