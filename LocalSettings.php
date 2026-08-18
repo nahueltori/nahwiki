@@ -54,7 +54,7 @@ $wgEmergencyContact = "admin@ima.wiki.net.ar";
 # 3. Configuración del Servidor SMTP Externo
 $wgSMTP = [
     'host'      => 'smtp.email.us-phoenix-1.oci.oraclecloud.com', # Servidor SMTP (Usa 'ssl://' para puerto 465 o 'tls://' para puerto 587)
-    'IDHost'    => 'wiki.net.ar',          # El dominio de tu Wiki
+    'IDHost'    => 'ima.wiki.net.ar',       # El dominio de tu Wiki
     'port'      => 587,                    # Puerto del servidor SMTP (465 o 587)
     'auth'      => true,                   # Requiere autenticación
     'username'  => 'ocid1.user.oc1..aaaaaaaazbigozi7glmolue7v4sc7rhhnogekbs7lwmj2yh4nujjggexhmoq@ocid1.tenancy.oc1..aaaaaaaatr6pgacm4n67qjo6fqr3fd7fypkj5iym3kspn74ej5n246cfkvva.hx.com',# Tu usuario/correo de inicio de sesión
