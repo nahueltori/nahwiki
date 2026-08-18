@@ -25,7 +25,9 @@ services:
       - redis_data:/data
 
   mediawiki:
-    image: mediawiki:1.43
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: mediawiki
     restart: unless-stopped
     depends_on:
