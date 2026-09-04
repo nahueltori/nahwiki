@@ -41,6 +41,7 @@ services:
       - ./data/images:/var/www/html/images
       - ./data/extensions:/var/www/html/extensions
       - ./custom-php.ini:/usr/local/etc/php/conf.d/timezone.ini
+      - ./LocalSettings.php:/var/www/html/LocalSettings.php
 
     environment:
       MEDIAWIKI_DB_HOST: db

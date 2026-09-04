@@ -12,7 +12,7 @@
 
 # Protect against web entry
 if ( !defined( 'MEDIAWIKI' ) ) {
-	exit;
+        exit;
 }
 
 
@@ -39,8 +39,8 @@ $wgResourceBasePath = $wgScriptPath;
 ## The URL paths to the logo.  Make sure you change this from the default,
 ## or else you'll overwrite your logo when you upgrade!
 $wgLogos = [
-	'1x' => "$wgResourceBasePath/resources/assets/logo-ima.jpg",
-	'icon' => "$wgResourceBasePath/resources/assets/logo-ima.jpg",
+        '1x' => "$wgResourceBasePath/resources/assets/logo-ima.jpg",
+        'icon' => "$wgResourceBasePath/resources/assets/logo-ima.jpg",
 ];
 
 ## UPO means: this is also a user preference option
@@ -105,7 +105,7 @@ $wgPingback = true;
 $wgLanguageCode = "es";
 
 # Time zone
-$wgLocaltimezone = "UTC";
+$wgLocaltimezone = "America/Argentina/Buenos_Aires";
 
 ## Set $wgCacheDirectory to a writable directory on the web server
 ## to make your wiki go slightly faster. The directory should not
@@ -137,7 +137,7 @@ $wgGroupPermissions["*"]["edit"] = false;
 
 ## Default skin: you can change the default skin. Use the internal symbolic
 ## names, e.g. 'vector' or 'monobook':
-$wgDefaultSkin = "vector";
+$wgDefaultSkin = "vector-2022";
 
 # Enabled skins.
 # The following skins were automatically enabled:
@@ -150,3 +150,11 @@ wfLoadSkin( 'Vector' );
 # End of automatically generated settings.
 # Add more configuration options below.
 
+$wgVectorDefaultSkinVersionForPublicUsers = '2022';
+$wgVectorDefaultSkinVersionForExistingAccounts = '2022';
+$wgVectorDefaultSkinVersionForNewAccounts = '2022';
+
+# Uso del editor visual
+wfLoadExtension( 'VisualEditor' );
+$wgVisualEditorDefaultUserOptions['visualeditor-editor'] = 'visualeditor';
+$wgVisualEditorDefaultUserOptions['visualeditor-tabs'] = 'prefer-visual';
