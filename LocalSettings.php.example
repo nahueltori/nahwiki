@@ -172,3 +172,5 @@ $wgVectorDefaultSkinVersionForNewAccounts = '2022';
 wfLoadExtension( 'VisualEditor' );
 $wgVisualEditorDefaultUserOptions['visualeditor-editor'] = 'visualeditor';
 $wgVisualEditorDefaultUserOptions['visualeditor-tabs'] = 'prefer-visual';
+
+$wgShowExceptionDetails = true;
