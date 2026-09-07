@@ -82,9 +82,9 @@ $wgEmailAuthentication = true;
 ## Database settings
 $wgDBtype = "mysql";
 $wgDBserver = envRequired('MEDIAWIKI_DB_SERVER');
-$wgDBname = envRequired('MEDIAWIKI_DB_NAME');
-$wgDBuser = envRequired('MEDIAWIKI_DB_USER');
-$wgDBpassword = envRequired('MEDIAWIKI_DB_PASSWORD');
+$wgDBname = envRequired('MARIADB_DATABASE');
+$wgDBuser = envRequired('MARIADB_USER');
+$wgDBpassword = envRequired('MARIADB_PASSWORD');
 
 # MySQL specific settings
 $wgDBprefix = "";
