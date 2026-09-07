@@ -30,6 +30,8 @@ services:
       dockerfile: Dockerfile
     container_name: mediawiki
     restart: unless-stopped
+    env_file:
+      - /home/ubuntu/nahwiki-secrets.env
     depends_on:
       db:
         condition: service_healthy
@@ -41,7 +43,7 @@ services:
       - ./data/images:/var/www/html/images
       - ./data/extensions:/var/www/html/extensions
       - ./custom-php.ini:/usr/local/etc/php/conf.d/timezone.ini
-      - ./LocalSettings.php:/var/www/html/LocalSettings.php
+      - ./LocalSettings.php.example:/var/www/html/LocalSettings.php:ro
 
     environment:
       MEDIAWIKI_DB_HOST: db

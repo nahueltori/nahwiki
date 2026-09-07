@@ -1,5 +1,7 @@
 *.key
 *.key.pub
 .env
+*.env
+!*.env.example
 
 .ssh
