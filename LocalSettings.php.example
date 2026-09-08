@@ -139,9 +139,9 @@ $wgUpgradeKey = envRequired('MEDIAWIKI_UPGRADE_KEY');
 ## appropriate copyright notice / icon. GNU Free Documentation
 ## License and Creative Commons licenses are supported so far.
 $wgRightsPage = ""; # Set to the title of a wiki page that describes your license/copyright
-$wgRightsUrl = "";
-$wgRightsText = "";
-$wgRightsIcon = "";
+$wgRightsUrl = "https://www.gnu.org/copyleft/fdl.html";
+$wgRightsText = "Licencia de documentación libre de GNU 1.3 o posterior";
+$wgRightsIcon = "$wgResourceBasePath/resources/assets/licenses/gnu-fdl.png";
 
 # Path to the GNU diff3 utility. Used for conflict resolution.
 $wgDiff3 = "/usr/bin/diff3";
@@ -160,6 +160,23 @@ wfLoadSkin( 'MonoBook' );
 wfLoadSkin( 'Timeless' );
 wfLoadSkin( 'Vector' );
 
+# Enabled extensions. Most of the extensions are enabled by adding
+# wfLoadExtension( 'ExtensionName' );
+# to LocalSettings.php. Check specific extension documentation for more details.
+# The following extensions were automatically enabled:
+wfLoadExtension( 'AbuseFilter' );
+wfLoadExtension( 'CategoryTree' );
+wfLoadExtension( 'DiscussionTools' );
+wfLoadExtension( 'Gadgets' );
+wfLoadExtension( 'ImageMap' );
+wfLoadExtension( 'Linter' );
+wfLoadExtension( 'Math' );
+wfLoadExtension( 'MultimediaViewer' );
+wfLoadExtension( 'PageImages' );
+wfLoadExtension( 'PdfHandler' );
+wfLoadExtension( 'Poem' );
+wfLoadExtension( 'VisualEditor' );
+
 
 # End of automatically generated settings.
 # Add more configuration options below.
@@ -169,7 +186,6 @@ $wgVectorDefaultSkinVersionForExistingAccounts = '2022';
 $wgVectorDefaultSkinVersionForNewAccounts = '2022';
 
 # Uso del editor visual
-wfLoadExtension( 'VisualEditor' );
 $wgVisualEditorDefaultUserOptions['visualeditor-editor'] = 'visualeditor';
 $wgVisualEditorDefaultUserOptions['visualeditor-tabs'] = 'prefer-visual';
 
